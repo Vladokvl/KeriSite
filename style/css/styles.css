@@ -68,7 +68,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 90px;
+    margin-bottom: 50px;
+    
+    
 }
 
 .text {
@@ -79,4 +81,8 @@ body {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 0px;
+}
+.gif_container img {
+    width: 20%; /* Змініть це значення на бажаний розмір ширини */
+    height: auto; /* Автоматично обчислює висоту для збереження пропорцій */
 }
