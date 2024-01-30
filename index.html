@@ -1,39 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="./style/css/styles.css">
-</head>
-<body>
-    <div class="container">
-        <div>
-            <h1 class="header_text">Do you wanna go out with me ehe</h1>
+    <head>
+        <link rel="stylesheet" href="./style/css/styles.css">
+        
+    </head> 
+    <body>
+        <div class="container">
+            <div >
+                <h1 class = "header_text">Do you wanna go out with me ehe</h1>
+            </div>
+            <div class="gif_container">
+                <img src="https://media.giphy.com/media/LnKonfpQ44fNvuGLkA/giphy.gif" alt="Cute animated illustration">
+            </div>
+            <div class = "buttons">
+                <button class="btn" id = "yesButton" onclick="nextPage()">Yes</button>
+                <button class="btn" id="noButton" onclick="moveButton()">No</button>
+                <script>
+                    function nextPage() {
+                        window.location.href = "yes.html";
+                    }
+                    
+                    function moveButton() {
+                        var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth);
+                        var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight);
+                        document.getElementById('noButton').style.left = `${x}px`;
+                        document.getElementById('noButton').style.top = `${y}px`;
+                    }
+                </script> 
+            </div>
         </div>
-        <div class="gif_container">
-            <img src="https://media.giphy.com/media/LnKonfpQ44fNvuGLkA/giphy.gif" alt="Cute animated illustration">
-        </div>
-        <div class="buttons">
-            <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
-            <button class="btn" id="noButton" onclick="moveButton()">No</button>
-        </div>
-    </div>
-
-    <script>
-        function nextPage() {
-            window.location.href = "yes.html";
-        }
-
-        function moveButton() {
-            var button = document.getElementById('noButton');
-            var x = Math.random() * (document.body.clientWidth - button.offsetWidth);
-            var y = Math.random() * (document.body.clientHeight - button.offsetHeight);
-
-            // Обмежте координати x та y, щоб кнопка залишалася всередині видимої області екрану
-            x = Math.max(0, Math.min(x, document.body.clientWidth - button.offsetWidth));
-            y = Math.max(0, Math.min(y, document.body.clientHeight - button.offsetHeight));
-
-            button.style.transition = "transform 0.5s ease";
-            button.style.transform = `translate(${x}px, ${y}px)`;
-        }
-    </script>
-</body>
+       
+    </body> 
 </html>
