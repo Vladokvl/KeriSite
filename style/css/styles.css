@@ -88,3 +88,16 @@ body {
     width: 50%; /* Змініть це значення на бажаний розмір ширини */
     height: auto; /* Автоматично обчислює висоту для збереження пропорцій */
 }
+.secImg img{
+    width: 150%; /* Змініть це значення на бажаний розмір ширини */
+    height: auto;
+}
+.text2 {
+    font-family: 'Nunito';
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
