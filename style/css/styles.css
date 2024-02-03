@@ -3,9 +3,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url("file:///C:/Users/zovta/Desktop/KeriSite/style/images/pngwingcom.png");
+    background-color: rgb(213, 63, 98);
     background-size: cover;
-    background-position: center;
 }
 
 /* Position the "No" button absolutely within body */
