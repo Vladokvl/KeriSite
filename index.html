@@ -50,6 +50,7 @@
                 var imgCounter = 0;
                 var txtCounter = 0;
                 var yesButtonSize = 2; // Початковий розмір кнопки "Yes" 
+                var noButtonSize = 2; // Початковий розмір кнопки "Yes" 
                 function moveButton() {
                     var images = ['./img/sticker-2.webp', './img/sticker-1.webp'];
                     var buttonTexts = [  "NOOOOO", "Don't do it(" ];
@@ -58,10 +59,16 @@
                     txtCounter = (txtCounter + 1) % buttonTexts.length;
                     document.getElementById('gifImage').src = images[imgCounter];
                     document.getElementById('noButton').innerText = buttonTexts[txtCounter];
-                          
+                    
+                    //yes button gets bigger      
                     yesButtonSize += 2;
                     document.getElementById('yesButton').style.fontSize = yesButtonSize + 'rem';
                     document.getElementById('yesButton').style.padding = '3rem 5rem'; // Постійний padding
+
+                    //no button gets smaller
+                    noButtonSize -= 0.2;
+                    document.getElementById('noButton').style.fontSize = noButtonSize + 'rem';
+                    document.getElementById('noButton').style.padding = '2rem 4rem'; // Постійний padding
                     /*uncomment to turn on
                     // sending no to email
                     var formData = new FormData();
