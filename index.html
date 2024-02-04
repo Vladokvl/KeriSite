@@ -25,12 +25,11 @@
                     document.getElementById('buttons').style.display = 'none'; // Приховати кнопки
                     
                     document.getElementById('hiddenForm').style.display = 'flex';
-                    /*
-                    // Збирання даних форми
+                    /* uncomment to turn on
+                    // sending yes to email
                     var formData = new FormData();
                     formData.append('message', 'she said yes');
 
-                    // Відправка даних форми на сервер Formspreе без переходу на сторінку Formspreе
                     fetch('https://formspree.io/f/xvoekrrk', {
                         method: 'POST',
                         body: formData
@@ -63,12 +62,11 @@
                     yesButtonSize += 2;
                     document.getElementById('yesButton').style.fontSize = yesButtonSize + 'rem';
                     document.getElementById('yesButton').style.padding = '3rem 5rem'; // Постійний padding
-                    /*
-                    // Збирання даних форми
+                    /*uncomment to turn on
+                    // sending no to email
                     var formData = new FormData();
                     formData.append('message', 'she says no');
 
-                    // Відправка даних форми на сервер Formspreе без переходу на сторінку Formspreе
                     fetch('https://formspree.io/f/xvoekrrk', {
                         method: 'POST',
                         body: formData
