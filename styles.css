@@ -41,7 +41,7 @@ body {
   font-size: 2rem;
   cursor: pointer;
   display: inline-block;
-  transition: 300ms;
+  transition: 0.3s;
 }
 
 
