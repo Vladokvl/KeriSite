@@ -12,26 +12,38 @@
     <body background="./img/pngwingcom.png">
         <div class="container">
             <div class="gif_container">
-                <img src="./img/sticker-0.webp" alt="Cute animated illustration" style="height: 100%; width: auto;">
+                <img id="gifImage" src="./img/sticker-0.webp" alt="Cute animated illustration" style="height: 100%; width: auto;">
             </div>
             <div >
-                <h1 class = "header_text">Kery, will you be my valentine ?)</h1>
+                <h1 id="headerText" class="header_text">Kery, will you be my valentine ?)</h1>
             </div>
             
-            <div class = "buttons">
+            <div id="buttons" class = "buttons">
                 <button class="btn" id = "yesButton" onclick="nextPage()">Yes</button>
                 <button class="btn" id="noButton" onclick="moveButton()">No</button>
                 <script>
-                    function nextPage() {
-                        window.location.href = "yes.html";
+                        function nextPage() {
+                        document.getElementById('headerText').innerText = 'Yippie!!!\nSee you soon for a suprise!)';
+                        document.getElementById('gifImage').src = './img/sticker-yes.webp';
+                        document.getElementById('buttons').style.display = 'none'; // Приховати кнопки
                     }
+
                     
-                    function moveButton() {
-                        var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth);
-                        var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight);
-                        document.getElementById('noButton').style.left = `${x}px`;
-                        document.getElementById('noButton').style.top = `${y}px`;
-                    }
+                    var counter = 0;
+                    var yesButtonSize = 2; // Початковий розмір кнопки "Yes" 
+                        function moveButton() {
+                        var images = ['./img/sticker-2.webp', './img/sticker-1.webp'];
+                        var buttonTexts = ["NOOOOO", "Don't do it("];
+                        
+                        counter = (counter + 1) % images.length;
+                        document.getElementById('gifImage').src = images[counter];
+                        document.getElementById('noButton').innerText = buttonTexts[counter];
+                              
+                        yesButtonSize += 2;
+                         document.getElementById('yesButton').style.fontSize = yesButtonSize + 'rem';
+                         document.getElementById('yesButton').style.padding = '3rem 5rem'; // Постійний padding
+                         }
+                    
                 </script> 
             </div>
         </div>

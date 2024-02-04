@@ -7,29 +7,6 @@ body {
     background-size: cover;
     font-family: "Protest Riot", sans-serif;
 }
-.container {
-  height: 100vh;
-  margin: 0 auto;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-/* Position the "No" button absolutely within body */
-#noButton {
-    
-    margin-left: 50px;
-    transition: 0.5s;
-    
-}
-
-#yesButton {
-    
-    margin-right: 50px;
-    
-}
-
 .header_text {
    
     font-size: 60px;
@@ -46,20 +23,20 @@ body {
   align-items: center;
   justify-content: center;
   
-  gap: 1rem;
+  gap: 4rem;
     margin-top: 50px;
     margin-left: 0px;
     /* optional: adds some space between the buttons */
 }
 
 .btn {
-  padding: 1.5rem 2.5rem;
+  padding: 3rem 5rem;
   border: none;
   border-radius: 12px;
   background-color: #FFB6C1;
   color: white;
-  font-size: 1.6rem;
-  font-weight: 600;
+  font-size: 2rem;
+
   cursor: pointer;
   display: inline-block;
 }
@@ -70,34 +47,5 @@ body {
     justify-content: center;
     align-items: center;
     margin-bottom: 100px;
-    margin-top: 50px;
-    
-    
-}
-
-.text {
-  font-family: "Protest Riot", sans-serif;
-    font-size: 25px;
-    font-weight: bold;
-    color: white;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 0px;
-}
-.gif_container img {
-    width: 50%; /* Змініть це значення на бажаний розмір ширини */
-    height: auto; /* Автоматично обчислює висоту для збереження пропорцій */
-}
-.secImg img{
-    width: 150%; /* Змініть це значення на бажаний розмір ширини */
-    height: auto;
-}
-.text2 {
-  font-family: "Protest Riot", sans-serif;
-    font-size: 40px;
-    font-weight: bold;
-    color: white;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 0px;
+    margin-top: 50px;  
 }
