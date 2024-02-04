@@ -1,52 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="./styles.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-        href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap"
-        rel="stylesheet"
-        />
-    </head> 
-    <body background="./img/pngwingcom.png">
-        <div class="container">
-            <div class="gif_container">
-                <img id="gifImage" src="./img/sticker-0.webp" alt="Cute animated illustration" style="height: 100%; width: auto;">
-            </div>
-            <div >
-                <h1 id="headerText" class="header_text">Kery, will you be my valentine ?)</h1>
-            </div>
-            
-            <div id="buttons" class = "buttons">
-                <button class="btn" id = "yesButton" onclick="nextPage()">Yes</button>
-                <button class="btn" id="noButton" onclick="moveButton()">No</button>
-                <script>
-                        function nextPage() {
-                        document.getElementById('headerText').innerText = 'Yippie!!!\nSee you soon for a suprise!)';
-                        document.getElementById('gifImage').src = './img/sticker-yes.webp';
-                        document.getElementById('buttons').style.display = 'none'; // Приховати кнопки
-                    }
-
-                    
-                    var counter = 0;
-                    var yesButtonSize = 2; // Початковий розмір кнопки "Yes" 
-                        function moveButton() {
-                        var images = ['./img/sticker-2.webp', './img/sticker-1.webp'];
-                        var buttonTexts = ["NOOOOO", "Don't do it("];
-                        
-                        counter = (counter + 1) % images.length;
-                        document.getElementById('gifImage').src = images[counter];
-                        document.getElementById('noButton').innerText = buttonTexts[counter];
-                              
-                        yesButtonSize += 2;
-                         document.getElementById('yesButton').style.fontSize = yesButtonSize + 'rem';
-                         document.getElementById('yesButton').style.padding = '3rem 5rem'; // Постійний padding
-                         }
-                    
-                </script> 
-            </div>
+<head>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap" rel="stylesheet">
+</head> 
+<body background="./img/pngwingcom.png">
+    <div class="container">
+        <div class="gif_container">
+            <img id="gifImage" src="./img/sticker-0.webp" alt="Cute animated illustration" style="height: 100%; width: auto;">
         </div>
-       
-    </body> 
+        <div>
+            <h1 id="headerText" class="header_text">Kery, will you be my valentine ?)</h1>
+        </div>
+        
+        <div id="buttons" class="buttons">
+            <button class="btn" id="yesButton" onclick="submitForm()">Yes</button>
+            <button class="btn" id="noButton" onclick="moveButton()">No</button>
+            <script>
+                function submitForm() {
+                    document.getElementById('headerText').innerText = 'Yippie!!!\nSee you soon for a suprise!';
+                    document.getElementById('gifImage').src = './img/sticker-yes.webp';
+                    document.getElementById('buttons').style.display = 'none'; // Приховати кнопки
+                    
+                    document.getElementById('hiddenForm').style.display = 'flex';
+                    
+                    // Збирання даних форми
+                    var formData = new FormData();
+                    formData.append('message', 'була натиснута кнопка так');
+
+                    // Відправка даних форми на сервер Formspreе без переходу на сторінку Formspreе
+                    fetch('https://formspree.io/f/xvoekrrk', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        document.body.innerHTML = "<h1>Thank you!</h1>";
+                    })
+                    .catch(error => {
+                        console.error('There was a problem with your fetch operation:', error);
+                    });
+                    
+                }
+
+
+                var counter = 0;
+                var yesButtonSize = 2; // Початковий розмір кнопки "Yes" 
+                function moveButton() {
+                    var images = ['./img/sticker-2.webp', './img/sticker-1.webp'];
+                    var buttonTexts = ["NOOOOO", "Don't do it("];
+                    
+                    counter = (counter + 1) % images.length;
+                    document.getElementById('gifImage').src = images[counter];
+                    document.getElementById('noButton').innerText = buttonTexts[counter];
+                          
+                    yesButtonSize += 2;
+                    document.getElementById('yesButton').style.fontSize = yesButtonSize + 'rem';
+                    document.getElementById('yesButton').style.padding = '3rem 5rem'; // Постійний padding
+                    
+                    // Збирання даних форми
+                    var formData = new FormData();
+                    formData.append('message', 'була натиснута кнопка ні');
+
+                    // Відправка даних форми на сервер Formspreе без переходу на сторінку Formspreе
+                    fetch('https://formspree.io/f/xvoekrrk', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        document.body.innerHTML = "<h1>Thank you!</h1>";
+                    })
+                    .catch(error => {
+                        console.error('There was a problem with your fetch operation:', error);
+                    });
+                    
+                }
+                
+                function sendMessage() {
+                    
+                    // Отримання тексту з поля вводу
+                    var messageText = document.querySelector('#hiddenForm textarea[name="message"]').value;
+
+                    // Збирання даних форми
+                    var formData = new FormData();
+                    formData.append('message', messageText);
+
+                    // Відправка даних форми на сервер Formspreе без переходу на сторінку Formspreе
+                    fetch('https://formspree.io/f/xvoekrrk', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        document.body.innerHTML = "<h1>Thank you!</h1>";
+                    })
+                    .catch(error => {
+                        console.error('There was a problem with your fetch operation:', error);
+                    });
+                    document.getElementById('hiddenForm').style.display = 'none';
+                    document.getElementById('ThanksText').style.display = 'flex';
+                    
+                }
+            </script> 
+            
+        </div>
+
+        <h1 id="ThanksText" class="header_text" style="display: none;">Thanks :)</h1>
+        <!-- Новий блок з формою для відправлення повідомлення -->
+        <div id="hiddenForm" style="display: none;">
+            <label>
+                <h1 class="header_text">You can send me message)</h1>
+                <textarea name="message"></textarea>
+            </label>
+            <!-- your other form fields go here -->
+            <button class="btnForm" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+</body> 
 </html>

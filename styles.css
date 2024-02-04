@@ -8,7 +8,9 @@ body {
     font-family: "Protest Riot", sans-serif;
 }
 .header_text {
-   
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 60px;
     font-weight: bold;
     color: white;
@@ -48,4 +50,43 @@ body {
     align-items: center;
     margin-bottom: 100px;
     margin-top: 50px;  
+}
+/* Стилі для блоку з формою */
+#hiddenForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Додано */
+  margin-top: 20px; /* Відступ зверху */
+  margin-bottom: 20px; /* Відступ знизу */
+}
+#hiddenForm label{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Додано */
+}
+/* Стилі для текстового поля */
+#hiddenForm textarea {
+  width: 80%; /* Ширина поля вводу */
+  max-width: 600px; /* Максимальна ширина поля вводу */
+  height: 150px; /* Висота поля вводу */
+  margin-bottom: 20px; /* Відступ знизу */
+  padding: 10px; /* Внутрішній відступ */
+  border: 1px solid #ccc; /* Тінь */
+  border-radius: 5px; /* Скруглені кути */
+  resize: none; /* Заборона зміни розміру поля */
+  font-size: xx-large;
+}
+
+/* Стилі для кнопки відправки */
+#hiddenForm button {
+  padding: 2rem 4rem; /* Внутрішній відступ */
+  border: none; /* Без рамки */
+  border-radius: 12px; /* Скруглені кути */
+  background-color: #FFB6C1; /* Колір фону */
+  color: white; /* Колір тексту */
+  font-size: 2rem; /* Розмір тексту */
+  cursor: pointer; /* Показувати курсор руки */
+  display: inline-block; /* Виведення в один рядок */
 }
