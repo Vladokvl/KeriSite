@@ -1,5 +1,5 @@
 body {
-  display: flex; 
+  display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -7,40 +7,27 @@ body {
   background-size: cover;
   background-position: center;
   font-family: "Protest Riot", sans-serif;
-  flex-direction: column;
-  /* padding: 0% 35%; */
+  min-height: fit-content;
 }
-.container{
-  display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   
-
-}
-.container * {
-  
-}
-.container * *{
-  
-  
-}
-
 .header_text {
-  height: 100%;
-  width: 100%;
-  font-size: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.7rem;
   font-weight: bold;
   color: rgb(255, 255, 255);
   text-align: center;
   margin-top: 2rem;
   margin-bottom: 0px;
-  
 }
 
 .buttons {
-   display: flex; 
-    gap: 4rem;
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+
+gap: 4rem;
   margin-top: 3rem;
   margin-left: 0rem;
   /* optional: adds some space between the buttons */
@@ -58,42 +45,36 @@ cursor: pointer;
 display: inline-block;
 transition: 0.3s;
 }
- .gif_container {
+.gif_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   
+  margin: 3rem;
 }
-.gif_container img {
-  width: 100%; /* Автоматична ширина для збереження пропорцій */
-  height: auto; /* Автоматична висота для збереження пропорцій */
- 
-}
-  
 
-
-.header_text_container{
-  
-}
 /* Стилі для блоку з формою */
 #hiddenForm {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; /* Додано */
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center; /* Додано */
 margin-top: 2rem; /* Відступ зверху */
 margin-bottom: 2rem; /* Відступ знизу */
 }
 #hiddenForm label{
-  display: flex;
+display: flex;
 flex-direction: column;
 align-items: center;
-
+justify-content: center; /* Додано */
 }
 /* Стилі для текстового поля */
 #hiddenForm textarea {
 width: 80%; /* Ширина поля вводу */
 max-width: 60rem; /* Максимальна ширина поля вводу */
 height: 10rem; /* Висота поля вводу */
-margin-top: 2rem;
 margin-bottom: 2rem; /* Відступ знизу */
+margin-top: 2rem; /* Відступ знизу */
 padding: 1rem; /* Внутрішній відступ */
 border: 1px solid #ccc; /* Тінь */
 border-radius: 0.5rem; /* Скруглені кути */
@@ -103,7 +84,6 @@ font-size: xx-large;
 
 /* Стилі для кнопки відправки */
 #hiddenForm button {
-  
 padding: 2rem 4rem; /* Внутрішній відступ */
 border: none; /* Без рамки */
 border-radius: 1rem; /* Скруглені кути */
